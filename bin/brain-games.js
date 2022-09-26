@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
+import userName from '/home/musson/frontend-project-44/src/cli.js';
 
 console.log('Welcome to the Brain Games!');
-
-const name = readlineSync.question('May I have your name? ');
-
-console.log(`Hello, ${name}!`);
+userName();
