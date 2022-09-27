@@ -24,8 +24,7 @@ export default () => {
       console.log('Correct!');
       i += 1;
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${checkParity}'.
-      Let's try again, Bill!`);
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${checkParity}'. \nLet's try again, ${name}!`);
     }
   }
   console.log(`Congratulations, ${name}!`);
