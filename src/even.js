@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 
+// eslint-disable-next-line consistent-return
 export default () => {
   console.log('Welcome to the Brain Games!');
 
@@ -13,6 +14,8 @@ export default () => {
     const randomNum = Math.floor(Math.random() * 10);
     console.log(`Question: ${randomNum}`);
 
+    const checkParity = randomNum % 2 === 0 ? 'yes' : 'no';
+
     const answer = readlineSync.question('Your answer: ');
     if (randomNum % 2 === 0 && answer.toLowerCase() === 'yes') {
       console.log('Correct!');
@@ -21,8 +24,8 @@ export default () => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log('Incorrect!');
-      i = 1;
+      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${checkParity}'.
+      Let's try again, Bill!`);
     }
   }
   console.log(`Congratulations, ${name}!`);
