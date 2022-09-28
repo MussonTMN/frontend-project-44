@@ -17,10 +17,7 @@ export default () => {
     const checkParity = randomNum % 2 === 0 ? 'yes' : 'no';
 
     const answer = readlineSync.question('Your answer: ');
-    if (randomNum % 2 === 0 && answer.toLowerCase() === 'yes') {
-      console.log('Correct!');
-      i += 1;
-    } else if (randomNum % 2 !== 0 && answer.toLowerCase() === 'no') {
+    if ((randomNum % 2 === 0 && answer.toLowerCase() === 'yes') || (randomNum % 2 !== 0 && answer.toLowerCase() === 'no')) {
       console.log('Correct!');
       i += 1;
     } else {
