@@ -16,8 +16,8 @@ const trueResult = (first, second, operator) => {
 
 const data = () => {
   const items = ['+', '-', '*'];
-  const first = getRandomNum(0, 10);
-  const second = getRandomNum(0, 10);
+  const first = getRandomNum(0, 11);
+  const second = getRandomNum(0, 11);
   const operator = items[getRandomNum(0, 2)];
   const task = `${first} ${operator} ${second}`;
   const expectedResult = trueResult(first, second, operator);
