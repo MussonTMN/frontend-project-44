@@ -3,26 +3,7 @@ import calcGame from '../src/index.js';
 
 const gameQuestion = 'What is the result of the expression?';
 
-const randomInteger = (min, max) => {
-  const rand = min - 0.5 + Math.random() * (max - min + 1);
-  return Math.round(rand);
-};
-
-const oneOfThree = () => {
-  const items = ['+', '-', '*'];
-  return items[randomInteger(0, 2)];
-};
-
-const firstNum = getRandomNum();
-const secondNum = getRandomNum();
-
-const task = `${firstNum} ${oneOfThree()} ${secondNum}`;
-
-const trueResult = () => {
-  const taskColl = task.split(' ');
-  const first = Number(taskColl[0]);
-  const second = Number(taskColl[2]);
-  const operator = taskColl[1];
+const trueResult = (first, second, operator) => {
   let result = 0;
   if (operator === '+') {
     result = first + second;
@@ -30,8 +11,19 @@ const trueResult = () => {
     result = first - second;
   } else if (operator === '*') {
     result = first * second;
-  } return result;
+  } return String(result);
 };
+
+const data = () => {
+  const items = ['+', '-', '*'];
+  const first = getRandomNum(0, 10);
+  const second = getRandomNum(0, 10);
+  const operator = items[getRandomNum(0, 2)];
+  const task = `${first} ${operator} ${second}`;
+  const expectedResult = trueResult(first, second, operator);
+  return [task, expectedResult];
+};
+
 export default () => {
-  calcGame(gameQuestion, trueResult, task);
+  calcGame(gameQuestion, data);
 };
