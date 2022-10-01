@@ -21,7 +21,7 @@ const data = () => {
   const getMissingNum = getRandomNum(0, arrayLength);
   const arrayWithMiss = array.splice(getMissingNum, 1, '..');
   const expectedResult = String(arrayWithMiss);
-  const task = `${array}`;
+  const task = array.join(' ');
   return [task, expectedResult];
 };
 
