@@ -1,7 +1,7 @@
 import getRandomNum from '../src/getRandomNum.js';
 import primeGame from '../src/index.js';
 
-const gameQuestion = "Answer 'yes' if number even otherwise answer 'no'.";
+const gameQuestion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
 const isPrime = (num) => {
   for (let divider = 2; divider <= num / 2; divider += 1) {
