@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
 
-// eslint-disable-next-line consistent-return
 export default (description, getTaskAndSolution) => {
   console.log('Welcome to the Brain Games!');
 
@@ -16,12 +15,11 @@ export default (description, getTaskAndSolution) => {
 
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer === expectedResult) {
-      console.log('Correct!');
-      i += 1;
-    } else {
+    if (answer !== expectedResult) {
       return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expectedResult}'. \nLet's try again, ${name}!`);
     }
+    console.log('Correct!');
+    i += 1;
   }
   return console.log(`Congratulations, ${name}!`);
 };
