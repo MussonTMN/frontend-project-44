@@ -13,7 +13,7 @@ const getGcd = (first, second) => {
   return String(gcd);
 };
 
-const data = () => {
+const getTaskAndSolution = () => {
   const first = getRandomNum(0, 100);
   const second = getRandomNum(0, 100);
   const task = `${first} ${second}`;
@@ -22,5 +22,5 @@ const data = () => {
 };
 
 export default () => {
-  gcdGame(description, data);
+  gcdGame(description, getTaskAndSolution);
 };

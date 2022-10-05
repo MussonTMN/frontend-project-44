@@ -12,7 +12,7 @@ const isPrime = (num) => {
   return 'yes';
 };
 
-const data = () => {
+const getTaskAndSolution = () => {
   const prime = getRandomNum(2, 111);
   const expectedResult = isPrime(prime);
   const task = `${prime}`;
@@ -20,5 +20,5 @@ const data = () => {
 };
 
 export default () => {
-  primeGame(description, data);
+  primeGame(description, getTaskAndSolution);
 };

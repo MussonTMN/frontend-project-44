@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 // eslint-disable-next-line consistent-return
-export default (description, data) => {
+export default (description, getTaskAndSolution) => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
@@ -11,7 +11,7 @@ export default (description, data) => {
 
   let i = 1;
   while (i <= 3) {
-    const [task, expectedResult] = data();
+    const [task, expectedResult] = getTaskAndSolution();
     console.log(`Question: ${task}`);
 
     const answer = readlineSync.question('Your answer: ');

@@ -12,7 +12,7 @@ const getProgression = (firstElement, lengthOfArray, numberStep) => {
   return coll;
 };
 
-const data = () => {
+const getTaskAndSolution = () => {
   const lengthOfArray = getRandomNum(5, 15);
   const firstElement = getRandomNum(0, 100);
   const numberStep = getRandomNum(1, 9);
@@ -26,5 +26,5 @@ const data = () => {
 };
 
 export default () => {
-  progressionGame(description, data);
+  progressionGame(description, getTaskAndSolution);
 };
