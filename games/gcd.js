@@ -1,7 +1,7 @@
 import getRandomNum from '../src/getRandomNum.js';
 import gcdGame from '../src/index.js';
 
-const gameQuestion = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const trueResult = (first, second) => {
   const lesserOperand = first <= second ? first : second;
@@ -22,5 +22,5 @@ const data = () => {
 };
 
 export default () => {
-  gcdGame(gameQuestion, data);
+  gcdGame(description, data);
 };

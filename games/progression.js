@@ -1,7 +1,7 @@
 import getRandomNum from '../src/getRandomNum.js';
 import progressionGame from '../src/index.js';
 
-const gameQuestion = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const getProgression = (firstElement, lengthOfArray, numberStep) => {
   const coll = [firstElement];
@@ -26,5 +26,5 @@ const data = () => {
 };
 
 export default () => {
-  progressionGame(gameQuestion, data);
+  progressionGame(description, data);
 };

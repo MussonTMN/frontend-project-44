@@ -1,7 +1,7 @@
 import getRandomNum from '../src/getRandomNum.js';
 import calcGame from '../src/index.js';
 
-const gameQuestion = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const trueResult = (first, second, operator) => {
   let result = 0;
@@ -25,5 +25,5 @@ const data = () => {
 };
 
 export default () => {
-  calcGame(gameQuestion, data);
+  calcGame(description, data);
 };
