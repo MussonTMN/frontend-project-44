@@ -16,12 +16,12 @@ const getTaskAndSolution = () => {
   const lengthOfArray = getRandomNum(5, 15);
   const firstElement = getRandomNum(0, 100);
   const numberStep = getRandomNum(1, 9);
-  const array = getProgression(firstElement, lengthOfArray, numberStep);
-  const arrayLength = array.length - 1;
-  const getMissingNum = getRandomNum(0, arrayLength);
-  const arrayWithMiss = array.splice(getMissingNum, 1, '..');
-  const expectedResult = String(arrayWithMiss);
-  const task = array.join(' ');
+  const progression = getProgression(firstElement, lengthOfArray, numberStep);
+  const lastIndex = progression.length - 1;
+  const getMissingNum = getRandomNum(0, lastIndex);
+  const formatProgression = progression.splice(getMissingNum, 1, '..');
+  const expectedResult = String(formatProgression);
+  const task = progression.join(' ');
   return [task, expectedResult];
 };
 
