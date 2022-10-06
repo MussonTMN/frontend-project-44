@@ -4,12 +4,13 @@ export default (description, getTaskAndSolution) => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
+  const gameRounds = 3;
 
   console.log(`Hello, ${name}!`);
   console.log(`${description}`);
 
   let i = 1;
-  while (i <= 3) {
+  while (i <= gameRounds) {
     const [task, expectedResult] = getTaskAndSolution();
     console.log(`Question: ${task}`);
 

@@ -2,6 +2,7 @@ import getRandomNum from '../getRandomNum.js';
 import progressionGame from '../index.js';
 
 const description = 'What number is missing in the progression?';
+const lengthOfProgression = 10;
 
 const getProgression = (firstElement, lengthOfArray, numberStep) => {
   const coll = [firstElement];
@@ -13,10 +14,9 @@ const getProgression = (firstElement, lengthOfArray, numberStep) => {
 };
 
 const getTaskAndSolution = () => {
-  const lengthOfArray = getRandomNum(5, 15);
   const firstElement = getRandomNum(0, 100);
   const numberStep = getRandomNum(1, 9);
-  const progression = getProgression(firstElement, lengthOfArray, numberStep);
+  const progression = getProgression(firstElement, lengthOfProgression, numberStep);
   const lastIndex = progression.length - 1;
   const getMissingNum = getRandomNum(0, lastIndex);
   const formatProgression = progression.splice(getMissingNum, 1, '..');
