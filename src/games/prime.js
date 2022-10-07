@@ -1,4 +1,4 @@
-import getRandomNum from '../getRandomNum.js';
+import getRandomNum from '../utils.js';
 import primeGame from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
