@@ -1,28 +1,15 @@
-import readlineSync from 'readline-sync';
+import getRandomNum from '../utils.js';
+import evenGame from '../index.js';
 
-// eslint-disable-next-line consistent-return
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const getTaskAndSolution = () => {
+  const getNumber = getRandomNum(0, 111);
+  const expectedResult = getNumber % 2 === 0 ? 'yes' : 'no';
+  const task = `${getNumber}`;
+  return [task, expectedResult];
+};
+
 export default () => {
-  console.log('Welcome to the Brain Games!');
-
-  const name = readlineSync.question('May I have your name? ');
-
-  console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  let i = 1;
-  while (i <= 3) {
-    const randomNum = Math.floor(Math.random() * 10);
-    console.log(`Question: ${randomNum}`);
-
-    const checkParity = randomNum % 2 === 0 ? 'yes' : 'no';
-
-    const answer = readlineSync.question('Your answer: ');
-    if ((randomNum % 2 === 0 && answer.toLowerCase() === 'yes') || (randomNum % 2 !== 0 && answer.toLowerCase() === 'no')) {
-      console.log('Correct!');
-      i += 1;
-    } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${checkParity}'. \nLet's try again, ${name}!`);
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+  evenGame(description, getTaskAndSolution);
 };
