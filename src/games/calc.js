@@ -11,7 +11,7 @@ const calculate = (firstNum, secondNum, operator) => {
     result = firstNum - secondNum;
   } else if (operator === '*') {
     result = firstNum * secondNum;
-  } return String(result);
+  } return result;
 };
 
 const getTaskAndSolution = () => {
@@ -20,7 +20,7 @@ const getTaskAndSolution = () => {
   const secondNum = getRandomNum(0, 11);
   const operator = items[getRandomNum(0, 2)];
   const task = `${firstNum} ${operator} ${secondNum}`;
-  const expectedResult = calculate(firstNum, secondNum, operator);
+  const expectedResult = String(calculate(firstNum, secondNum, operator));
   return [task, expectedResult];
 };
 

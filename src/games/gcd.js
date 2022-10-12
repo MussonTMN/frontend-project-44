@@ -10,14 +10,14 @@ const getGcd = (first, second) => {
   while (lesserOperand % gcd !== 0 || biggerOperand % gcd !== 0) {
     gcd -= 1;
   }
-  return String(gcd);
+  return gcd;
 };
 
 const getTaskAndSolution = () => {
   const first = getRandomNum(0, 100);
   const second = getRandomNum(0, 100);
   const task = `${first} ${second}`;
-  const expectedResult = getGcd(first, second);
+  const expectedResult = String(getGcd(first, second));
   return [task, expectedResult];
 };
 
